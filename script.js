@@ -68,6 +68,7 @@ $("#start_button").click(function(){
         }
         console.log("Max spell p2: " + player2max);   
         score(player1max, player2max);
+        $('#score').text("");
         $('#score').append("Player 1: " + player1score + " Player 2: " + player2score);
     }
 });
@@ -78,19 +79,19 @@ function score(spell1, spell2) {
     } else if (spell2 === undefined) {
         return;
     } else {
-        if (attack_spells.contains(spell1) && attack_spells.contains(spell2)) {
+        if (attack_spells.includes(spell1) && attack_spells.includes(spell2)) {
             player1score = player1score + 1;
             player2score = player2score + 1;
-        } else if (attack_spells.contains(spell1) && defense_spells.contains(spell2)) {
+        } else if (attack_spells.includes(spell1) && defense_spells.includes(spell2)) {
             player2score = player2score + 3;
-        } else if (attack_spells.contains(spell1) && spell2 === "None") {
+        } else if (attack_spells.includes(spell1) && spell2 === "None") {
             player1score = player1score + 3;
-        } else if (attack_spells.contains(spell2) && attack_spells.contains(spell1)) {
+        } else if (attack_spells.includes(spell2) && attack_spells.includes(spell1)) {
             player1score = player1score + 1;
             player2score = player2score + 1;
-        } else if (attack_spells.contains(spell2) && defense_spells.contains(spell1)) {
+        } else if (attack_spells.includes(spell2) && defense_spells.includes(spell1)) {
             player1score = player1score + 3;
-        } else if (attack_spells.contains(spell2) && spell1 === "None") {
+        } else if (attack_spells.includes(spell2) && spell1 === "None") {
             player2score = player2score + 3;
         }
     }
