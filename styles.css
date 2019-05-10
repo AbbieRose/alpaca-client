@@ -1,0 +1,13 @@
+#start_button {
+    background-color: aquamarine;
+    height: 75px;
+    width: 150px;
+    font-size: 17px;
+}
+
+#timer {
+    background-color: black;
+    height: 400px;
+    width: 600px;
+    margin: 50px;
+}
